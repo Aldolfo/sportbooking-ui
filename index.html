@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva tu cancha</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Reserva tu cancha</h1>
+        <nav aria-label="Navegación principal">
+      <a href="index.html">Catálogo</a>
+      <a href="mis-reservas.html">Mis Reservas</a>
+      <a href="admin.html">Panel Admin</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <select id="filtroDeporte">
+  <option value="todos">Todos los deportes</option>
+  <option value="Fútbol 8">Fútbol 8</option>
+  <option value="Pádel">Pádel</option>
+</select>
+        </section>
+        <section id="gridCanchas"></section>
+        <section id="emptyState">
+        <p> No se encontraron canchas disponibles.</p>
+        <button id="btnLimpiar"> Limpiar filtros</button>
+        </section>
+    </main>
+
+</body>
+
