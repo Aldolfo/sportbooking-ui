@@ -1,1 +1,311 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Curva Soccer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f6f4;
+            color: #171a17;
+        }
+
+        header {
+            background: #101810;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        header h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        header h1 span {
+            color: #a5e65b;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #d4dbd1;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a5e65b;
+        }
+
+        .hero {
+            background: #101810;
+            color: white;
+            padding: 85px 8% 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 1px solid #344532;
+            border-radius: 50%;
+            right: 8%;
+            top: 20px;
+            box-shadow: 0 0 0 35px #182318,
+                        0 0 0 70px #142014;
+            opacity: 0.7;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+        }
+
+        .hero small {
+            color: #a5e65b;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .hero h2 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.08;
+            margin: 22px 0;
+            letter-spacing: -3px;
+        }
+
+        .hero h2 span {
+            color: #a5e65b;
+        }
+
+        .hero p {
+            color: #b7c0b4;
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 450px;
+        }
+
+        main {
+            padding: 65px 8%;
+        }
+
+        .section-heading {
+            margin-bottom: 30px;
+        }
+
+        .section-heading small {
+            color: #659c35;
+            font-weight: 800;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-size: 30px;
+            margin-top: 10px;
+            letter-spacing: -1px;
+        }
+
+        .filtros {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        select {
+            background: white;
+            border: 1px solid #e1e5df;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-family: inherit;
+            font-size: 13px;
+            color: #333;
+            outline: none;
+            min-width: 220px;
+        }
+
+        #gridCanchas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .cancha-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e9ece7;
+            transition: 0.3s;
+        }
+
+        .cancha-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px #17241612;
+        }
+
+        .cancha-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .cancha-info {
+            padding: 22px;
+        }
+
+        .cancha-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .cancha-info p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        #emptyState {
+            display: none;
+            text-align: center;
+            padding: 45px 20px;
+            color: #777;
+        }
+
+        #btnLimpiar {
+            margin-top: 18px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #a5e65b;
+            color: #172015;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #101810;
+            color: #aeb8aa;
+            text-align: center;
+            padding: 28px 15px;
+            font-size: 12px;
+        }
+
+        footer strong {
+            color: #a5e65b;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                padding: 65px 8%;
+            }
+
+            .hero::after {
+                right: -220px;
+                opacity: 0.35;
+            }
+
+            main {
+                padding: 45px 6%;
+            }
+
+            .section-heading h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>LA CURVA <span>SOCCER.</span></h1>
+
+        <nav aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="index.html">Canchas</a>
+            <a href="mis-reservas.html">Mis reservas</a>
+            <a href="admin.html">Administración</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <small>DEPORTE · PASIÓN · AMIGOS</small>
+            <h2>Tu próximo partido <span>comienza aquí.</span></h2>
+            <p>
+                Encuentra tu cancha ideal, elige tu horario y solicita
+                tu arriendo de forma rápida y sencilla.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <div class="section-heading">
+            <small>ENCUENTRA TU ESPACIO</small>
+            <h2>Elige tu cancha</h2>
+        </div>
+
+        <section class="filtros">
+            <select id="filtroDeporte">
+                <option value="todos">Todos los deportes</option>
+                <option value="Fútbol 8">Fútbol 8</option>
+                <option value="Pádel">Pádel</option>
+            </select>
+        </section>
+
+        <section id="gridCanchas"></section>
+
+        <section id="emptyState">
+            <p>No se encontraron canchas disponibles.</p>
+            <button id="btnLimpiar">Limpiar filtros</button>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 <strong>LA CURVA SOCCER</strong> · Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
