@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Curva Soccer | Confirmar Reserva</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LA CURVA <span>SOCCER.</span></h1>
+
+        <nav aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="index.html">Canchas</a>
+            <a href="mis-reservas.html">Mis reservas</a>
+            <a href="admin.html">Administración</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="cancha.html" class="link-volver">← Volver a elegir horario</a>
+
+        <div class="section-heading" style="margin-top: 20px;">
+            <small>PASO FINAL · CONFIRMACIÓN</small>
+            <h2>Completa tu reserva</h2>
+        </div>
+
+        <div class="grid-checkout">
+            <!-- Resumen de la cancha y monto -->
+            <aside id="resumenCheckout" class="cancha-card" style="padding: 24px;"></aside>
+
+            <!-- Formulario con validación -->
+            <form id="formCheckout" class="cancha-card" style="padding: 24px;" novalidate>
+                <h3 style="margin-bottom: 18px;">Datos del responsable</h3>
+
+                <div class="form-group">
+                    <label for="nombreCliente">Nombre completo *</label>
+                    <input type="text" id="nombreCliente" placeholder="Ej: Adolfo Flores" required>
+                    <small id="errNombre" style="display: none; color: #ef4444;">Ingresa tu nombre completo.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="correoCliente">Correo electrónico *</label>
+                    <input type="email" id="correoCliente" placeholder="ejemplo@correo.cl" required>
+                    <small id="errCorreo" style="display: none; color: #ef4444;">Ingresa un correo válido.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefonoCliente">Teléfono de contacto *</label>
+                    <input type="tel" id="telefonoCliente" placeholder="Ej: 912345678" required>
+                    <small id="errTelefono" style="display: none; color: #ef4444;">Ingresa un teléfono válido.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="metodoPago">Método de pago</label>
+                    <select id="metodoPago">
+                        <option value="Webpay / Débito">Webpay / Tarjeta de Débito</option>
+                        <option value="Transferencia">Transferencia Bancaria</option>
+                        <option value="Pago en recinto">Pago presencial en La Curva</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="btnConfirmarPago">Confirmar Reserva ✅</button>
+            </form>
+        </div>
+
+        <!-- Modal de éxito -->
+        <dialog id="modalExito">
+            <h3>🎉 ¡Cancha reservada con éxito!</h3>
+            <p style="margin: 15px 0;">Tu bloque ya quedó agendado a tu nombre en La Curva Soccer.</p>
+            <a href="mis-reservas.html">Ver Mis Reservas →</a>
+        </dialog>
+    </main>
+
+    <footer>
+        © 2026 <strong>LA CURVA SOCCER</strong> · Todos los derechos reservados.
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

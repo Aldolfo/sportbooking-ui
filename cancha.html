@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Curva Soccer | Reservar Horario</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LA CURVA <span>SOCCER.</span></h1>
+
+        <nav aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="index.html">Canchas</a>
+            <a href="mis-reservas.html">Mis reservas</a>
+            <a href="admin.html">Administración</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="link-volver">← Volver a las canchas</a>
+
+        <!-- Aquí JS muestra la foto, nombre y precio de la cancha elegida -->
+        <section id="detalleCancha" style="margin: 25px 0;"></section>
+
+        <!-- Selección de bloque horario y servicios adicionales -->
+        <section class="reserva-box">
+            <div class="section-heading">
+                <small>PASO 1 · DISPONIBILIDAD</small>
+                <h2>Elige tu horario</h2>
+            </div>
+
+            <!-- Aquí JS crea los botones de las horas dinámicamente -->
+            <div id="contenedorHorarios"></div>
+
+            <div class="section-heading" style="margin-top: 35px;">
+                <small>PASO 2 · EQUIPAMIENTO</small>
+                <h2>Servicios adicionales (Opcional)</h2>
+            </div>
+
+            <div class="extras-lista">
+                <label>
+                    <input type="checkbox" class="check-extra" value="3000" data-nombre="Iluminación nocturna">
+                    💡 Iluminación nocturna (+$3.000)
+                </label>
+                <label>
+                    <input type="checkbox" class="check-extra" value="2000" data-nombre="Arriendo de balón y petos">
+                    ⚽ Arriendo de balón y petos (+$2.000)
+                </label>
+            </div>
+
+            <!-- Resumen dinámico y botón para avanzar al checkout -->
+            <div class="resumen-pago" style="margin-top: 30px;">
+                <p>Total estimado: <strong id="totalCancha">$0</strong></p>
+                <p id="errorHorario" role="alert" style="display: none; color: #ef4444;">
+                    ⚠️ Debes seleccionar un horario antes de continuar.
+                </p>
+                <button type="button" id="btnContinuarCheckout">Continuar al pago →</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 <strong>LA CURVA SOCCER</strong> · Todos los derechos reservados.
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

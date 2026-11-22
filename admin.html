@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Curva Soccer | Panel Administración</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LA CURVA <span>SOCCER.</span></h1>
+
+        <nav aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="index.html">Canchas</a>
+            <a href="mis-reservas.html">Mis reservas</a>
+            <a href="admin.html">Administración</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="section-heading">
+            <small>GESTIÓN DE RECINTOS</small>
+            <h2>Control de disponibilidad</h2>
+        </div>
+
+        <p style="margin-bottom: 20px; color: #555;">Haz clic en cada horario para habilitarlo o bloquearlo en tiempo real.</p>
+
+        <div class="tabla-responsive">
+            <table class="tabla-admin">
+                <thead>
+                    <tr>
+                        <th>Recinto</th>
+                        <th>Deporte</th>
+                        <th>Comuna</th>
+                        <th>Bloques Horarios</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaAdminBody">
+                    <!-- JS llena las filas aquí -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        © 2026 <strong>LA CURVA SOCCER</strong> · Todos los derechos reservados.
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
