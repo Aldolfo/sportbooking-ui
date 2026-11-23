@@ -22,7 +22,7 @@ const CANCHAS_INICIALES = [
         deporte: "Fútbol 8",
         comuna: "Bulnes",
         precio: 24000,
-        imagen: "https://images.unsplash.com/photo-1518605368461-1ee7e33f6745?auto=format&fit=crop&w=800&q=80",
+        imagen: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=800&q=80",
         descripcion: "Césped de última generación con iluminación LED perimetral y estacionamiento privado.",
         horarios: [
             { hora: "17:00", disponible: true },
